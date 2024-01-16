@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const convertController = require('../controllers/convertController');
+const postController = require('../controllers/postController');
 
 
 router
     .route('/')
-        .post(convertController.convertDevise)
+        .post(postController.createAPost)
 
 
 module.exports = router;

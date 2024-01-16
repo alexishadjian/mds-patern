@@ -8,11 +8,10 @@ mongoose.connect('mongodb://mongo/design-patern');
 app.use(express.urlencoded());
 app.use(express.json());
 
-const convertRoute = require('./routes/convertRoute');
+const postRoute = require('./routes/postRoute');
 
-app.use('/convert', convertRoute);
-// app.use('/result', voteRoute);
+app.use('/create', postRoute);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+    console.log(`Example app listening on port ${port}`);
 })

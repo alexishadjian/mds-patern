@@ -1,12 +1,12 @@
-const Convert = require('../models/convertModel');
+const Post = require('../models/postModel');
 
 
-exports.convertDevise = async (req, res) => {
+exports.createAPost = async (req, res) => {
 
-    const newConvert = new Convert(req.body);
+    const newPost = new Post(req.body);
     
     try {
-        const convert = await newConvert.save();
+        const convert = await newPost.save();
         res.status(201);
         res.json(convert);
     } catch (error) {

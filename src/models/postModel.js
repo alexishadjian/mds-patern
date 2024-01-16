@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let convertSchema = new Schema (
+let postSchema = new Schema (
     {
-        value: {
-            type: Number,
+        title: {
+            type: String,
             required: true,
         },
-        devise: {
+        content: {
             type: String,
             required: true
         },
@@ -15,4 +15,4 @@ let convertSchema = new Schema (
     { timestamps: true }
 );
 
-module.exports = mongoose.model('Convert', convertSchema);
+module.exports = mongoose.model('Post', postSchema);
