@@ -7,11 +7,7 @@ class NewsPost extends Post {
         super('News', title, content); //Take parent constructor
         this.source = source;
     }
-  
-    display() {
-        console.log(`News Post - ${this.title}: ${this.content}`);
-    }
     
 }
 
-module.exports = NewsPost;
+module.exports = new NewsPost();

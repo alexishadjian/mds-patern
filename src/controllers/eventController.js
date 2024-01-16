@@ -7,11 +7,7 @@ class EventPost extends Post {
         super('Event', title, content); //Take parent constructor
         this.place = place;
     }
-  
-    display() {
-        // console.log(`Event Post (${this.place}): ${this.content}`);
-    }
 
 }
 
-module.exports = EventPost;
+module.exports = new EventPost();

@@ -5,7 +5,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://mongo/design-patern');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 const eventRoute = require('./routes/eventRoute');
