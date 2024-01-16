@@ -10,7 +10,7 @@ app.use(express.json());
 
 const postRoute = require('./routes/postRoute');
 
-app.use('/create', postRoute);
+app.use('/post', postRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
