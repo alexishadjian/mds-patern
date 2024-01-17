@@ -1,5 +1,8 @@
 const Post = require('../models/postModel');
 const XmlToJsonAdapter = require('../xmlToJsonAdapter');
+const sendEmail = require('../sendEmails');
+const ArticleBlog = require('../articleController');
+const ModuleEnvoiEmail = require('../sendEmails');
 
 class PostController {
 
@@ -21,13 +24,25 @@ class PostController {
         }
     
         try {
-            const newPost = new Post(data);      
+            const newPost = new Post(data);
             const post = await newPost.save();
+      
+            const articleBlog = new ArticleBlog();
+            articleBlog.mettreAJourContenu(data.title, data.content);
+      
+            const moduleEnvoiEmail = ModuleEnvoiEmail; // Utilisez simplement la fonction sans new
+            articleBlog.ajouterObservateur(moduleEnvoiEmail);
+      
+            const destinataire = 'destinataire@example.com';
+            const sujetEmail = `Nouvel article ajouté : ${data.title}`;
+            const contenuEmail = `Contenu : ${data.content}`;
+            await sendEmail(destinataire, sujetEmail, contenuEmail);
+      
             res.status(201).json(post);
-        } catch (error) {
+          } catch (error) {
             console.error(error);
-            res.status(500).json({message: "Server error"});
-        }
+            res.status(500).json({ message: 'Server error' });
+          }
     }
 
 

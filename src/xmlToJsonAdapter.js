@@ -15,7 +15,7 @@ class XmlToJsonAdapter {
           reject(err);
         } else {
           // Ajuster la structure ici si nécessaire
-          const formattedResult = result.post ? { title: result.post.title, content: result.post.content } : {};
+          const formattedResult = result.post ? { title: result.post.title, content: result.post.content, type: result.post.type } : {};
           resolve(formattedResult);
         }
       });

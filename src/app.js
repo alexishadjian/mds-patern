@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const XmlToJsonAdapter = require('./xmlToJsonAdapter');
 const eventRoute = require('./routes/eventRoute');
 const app = express();
-const port = 3000;
+const port = 3002;
 
-mongoose.connect('mongodb://127.0.0.1:27017/design-patern');
+mongoose.connect('mongodb://127.0.0.1:27017/designpattern');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
