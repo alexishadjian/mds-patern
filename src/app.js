@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const XmlToJsonAdapter = require('./xmlToJsonAdapter'); // Importe le module de conversion XML vers JSON
 const eventRoute = require('./routes/eventRoute'); // Importe les routes liées aux événements
 const app = express(); // Crée une application Express
-const port = 3002; // Définit le port sur lequel le serveur écoutera
+const port = 3000; // Définit le port sur lequel le serveur écoutera
 
-mongoose.connect('mongodb://127.0.0.1:27017/designpattern'); // Se connecte à la base de données MongoDB
+mongoose.connect('mongodb://mongo/design-patern'); // Se connecte à la base de données MongoDB
 
 app.use(express.urlencoded({extended: true})); // Middleware pour analyser les données provenant des formulaires HTML
 app.use(express.json()); // Middleware pour analyser les données JSON dans les requêtes
