@@ -3,8 +3,19 @@
 ## How to init 
 
 - git clone
-- npm install
+- npm install in /src
 
-## How to start
+## Launch the project
+```
+docker-compose up
+```
 
-- npm start
+## Stop the project
+```
+docker-compose down
+```
+
+## URL
+```
+localhost:3000
+```
